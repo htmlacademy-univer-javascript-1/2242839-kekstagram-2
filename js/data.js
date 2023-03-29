@@ -1,4 +1,4 @@
-import {randomNumber, getMaxLengthStr} from "./util";
+import {randomNumber, getMaxLengthStr} from "./util.js";
 
 export const createPostsArray = () => {
   const createPost = (idElement) => {
@@ -25,7 +25,7 @@ export const createPostsArray = () => {
     return {
       id: idElement,
       avatar: `img/avatar-${randomNumber(1, 6)}.svg`,
-      message: statusText[randomNumber(0, statusText.length)],
+      messages: [...Array(randomNumber(1, 10))].map(() => statusText[randomNumber(0, statusText.length)]),
       name: names[randomNumber(0, names.length)],
     }
   }
