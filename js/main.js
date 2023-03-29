@@ -1,1 +1,3 @@
-import {createPostsArray} from "./data";
+import {drawUsers} from "./drawUser.js";
+
+
