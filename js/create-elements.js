@@ -16,6 +16,4 @@ const createPhotos = (id) => ({
   comments: Array.from({ length: getRandomPositiveInteger(CountComment.MIN, CountComment.MAX) }).map((value, index) => createComment(index + 1)),
 });
 
-const getPhotos = () => Array.from({ length: MAX_COUNT_PHOTOS }).map((value, index) => createPhotos(index + 1));
-
-export { getPhotos };
+export const getPhotos = () => Array.from({ length: MAX_COUNT_PHOTOS }).map((value, index) => createPhotos(index + 1));

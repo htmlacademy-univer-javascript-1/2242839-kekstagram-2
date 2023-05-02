@@ -17,7 +17,14 @@ export const Scale = {
   STEP: 25
 };
 
-export const PhotoValide = {
+export const EffectFilter = {
+  MIN: 0,
+  MAX: 100,
+  START: 100,
+  STEP: 0.1
+};
+
+export const Validation = {
   SUCCESS: 'success',
   ERROR: 'error'
 };
@@ -29,27 +36,27 @@ export const Filter = {
 };
 
 export const Effects = {
-  'original': {
+  original: {
     name: 'original', filter: '', unit: '',
     options: { range: { min: 0, max: 100 }, step: 1, start: 100 },
   },
-  'heat': {
+  heat: {
     name: 'heat', filter: 'brightness', unit: '',
     options: { range: { min: 1, max: 3 }, step: 0.1, start: 3 },
   },
-  'chrome': {
+  chrome: {
     name: 'chrome', filter: 'grayscale', unit: '',
     options: { range: { min: 0, max: 1 }, step: 0.1, start: 1 },
   },
-  'sepia': {
+  sepia: {
     name: 'sepia', filter: 'sepia', unit: '',
     options: { range: { min: 0, max: 1 }, step: 0.1, start: 1 },
   },
-  'marvin': {
+  marvin: {
     name: 'marvin', filter: 'invert', unit: '%',
     options: { range: { min: 0, max: 100 }, step: 1, start: 100 },
   },
-  'phobos': {
+  phobos: {
     name: 'phobos', filter: 'blur', unit: 'px',
     options: { range: { min: 0, max: 3 }, step: 0.1, start: 3 },
   }
@@ -59,9 +66,9 @@ export const ErrorMessage = {
   HASH_SPACE: 'Хэш-теги разделяются пробелами',
   STARTS_WITH_HASH: 'Хэш-тег начинается с символа #',
   REPEAT_ERROR: 'Хэш-теги не должны повторяться',
-  HASHTAG_MAX_LENTH: `Максимальная длина одного хэш-тега ${MaxHashtag.LENGTH} символов, включая #`,
+  HASHTAG_MAX_LENGTH: `Максимальная длина одного хэш-тега ${MaxHashtag.LENGTH} символов, включая #`,
   HASHTAG_MAX_COUNT: `Нельзя указать больше ${MaxHashtag.COUNT} хэш-тегов`,
-  UBNORMAL_SYMBOLS: 'Хэш-тег содержит недопустимые символы',
+  UB_NORMAL_SYMBOLS: 'Хэш-тег содержит недопустимые символы',
   MAX_COMM_LENGTH: `Максимальная длина комментария - ${MAX_COMMENT_LENGTH} символов.`,
   EMPTY_HASHTAG: 'Хэш-тег не может быть пустым',
 };

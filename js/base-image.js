@@ -1,5 +1,4 @@
-/* eslint-disable indent */
-const FILE_TYPES = ['gif', 'jpg', 'jpeg', 'png'];
+import { FILE_TYPES } from "./constants.js";
 
 const fileChooser = document.querySelector('.img-upload__input');
 const preview = document.querySelector('.img-upload__preview_img');
