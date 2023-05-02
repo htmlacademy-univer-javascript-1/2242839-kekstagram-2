@@ -1,15 +1,5 @@
 import { ALERT_SHOW_TIME } from './constants.js';
 
-const getRandomPositiveInteger = (min, max) => {
-  if (min < max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
-};
-
-const getRandomArrayElement = (elements) => elements[getRandomPositiveInteger(0, elements.length - 1)];
-
 const checkStringLength = (string, length) => string.length <= length;
 
 const showAlert = () => {
@@ -88,4 +78,4 @@ function throttle(callback, delayBetweenFrames = 500) {
   };
 }
 
-export { getRandomPositiveInteger, getRandomArrayElement, checkStringLength, showMessage, showAlert, shuffleArray, discussArray, debounce, throttle };
+export {checkStringLength, showMessage, showAlert, shuffleArray, discussArray, debounce, throttle };

@@ -59,12 +59,12 @@ const hashtagsHandler = (string) => {
 
     {
       check: inputHashtags.some((item) => item.length > MaxHashtag.LENGTH),
-      error: ErrorMessage.HASHTAG_MAX_LENTH,
+      error: ErrorMessage.HASHTAG_MAX_LENGTH,
     },
 
     {
       check: inputHashtags.some((item) => !/^#[A-Za-zА-Яа-яЁё0-9]{1,19}$/.test(item)),
-      error: ErrorMessage.UBNORMAL_SYMBOLS,
+      error: ErrorMessage.UB_NORMAL_SYMBOLS,
     },
 
     {
@@ -75,9 +75,11 @@ const hashtagsHandler = (string) => {
 
   return rules.every((rule) => {
     const isInvalid = rule.check;
+
     if (isInvalid) {
       errorMessage = rule.error;
     }
+
     return !isInvalid;
   });
 };

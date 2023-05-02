@@ -3,15 +3,13 @@ const URL = {
     POST: 'https://26.javascript.pages.academy/kekstagram'
   };
 
-  const getData = (onSuccess, onFail) => {
+  export const getData = (onSuccess, onFail) => {
     fetch(URL.GET)
       .then((response) => {
         if (response.ok) {
           return response.json();
         }
-        else {
-          onFail();
-        }
+        onFail();
       })
       .then((data) => {
         onSuccess(data);
@@ -21,25 +19,20 @@ const URL = {
       });
   };
 
-  const sendData = (onSuccess, onFail, body) => {
+  export const sendData = (onSuccess, onFail, body) => {
     fetch(
       URL.POST,
       {
         method: 'POST',
         body,
-      }
-    )
+      })
       .then((response) => {
         if (response.ok) {
           onSuccess();
         }
-        else {
-          onFail();
-        }
+        onFail();
       })
       .catch(() => {
         onFail();
       });
   };
-
-  export { getData, sendData };

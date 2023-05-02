@@ -1,4 +1,5 @@
 import { Effects } from './constants.js';
+import { EffectFilter } from "./constants.js";
 
 const sliderElement = document.querySelector('.effect-level__slider');
 const valueElement = document.querySelector('.effect-level__value');
@@ -10,16 +11,19 @@ const createSlider = () => {
   sliderWrapper.classList.add('hidden');
   noUiSlider.create(sliderElement, {
     range: {
-      min: 0,
-      max: 100,
+      min: EffectFilter.MIN,
+      max: EffectFilter.MAX,
     },
-    start: 100,
-    step: 0.1,
+    start: EffectFilter.START,
+    step: EffectFilter.STEP,
     format: {
       to: function (value) {
-        if (Number.isInteger(value)) {
+        const precision = Number.isInteger(value) ? 0 : 1;
+
+        if (!precision) {
           return value.toFixed(0);
         }
+
         return value.toFixed(1);
       },
       from: function (value) {

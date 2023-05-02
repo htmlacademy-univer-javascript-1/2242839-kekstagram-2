@@ -1,10 +1,10 @@
 import { commentHandler, hashtagsHandler, pristine, throwErrorMessage } from './validate.js';
-import { changeEffects } from './effects-filter.js';
+import { changeEffects } from './effects-filter-app.js';
 import { addEventScaleButtons, removeEventScaleButtons } from './scale.js';
-import { createSlider } from './effects-filter.js';
-import { sendData } from './api.js';
+import { createSlider } from './effects-filter-app.js';
+import { sendData } from './get-data-api.js';
 import { showMessage } from './utils.js';
-import { PhotoValide, FILE_TYPES } from './constants.js';
+import { Validation, FILE_TYPES } from './constants.js';
 
 const fileChooser = document.querySelector('.img-upload__input');
 const body = document.querySelector('body');
@@ -74,12 +74,12 @@ const setUserFormSubmit = () => {
       blockSubmitButton();
       sendData(
         () => {
-          showMessage(PhotoValide.SUCCESS);
+          showMessage(Validation.SUCCESS);
           unblockSubmitButton();
           closePopup();
         },
         () => {
-          showMessage(PhotoValide.ERROR);
+          showMessage(Validation.ERROR);
           unblockSubmitButton();
         },
         new FormData(evt.target)
