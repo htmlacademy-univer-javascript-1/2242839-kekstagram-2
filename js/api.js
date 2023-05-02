@@ -3,7 +3,6 @@ const URL = {
     POST: 'https://26.javascript.pages.academy/kekstagram'
   };
 
-
   const getData = (onSuccess, onFail) => {
     fetch(URL.GET)
       .then((response) => {
