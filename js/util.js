@@ -1,5 +1,10 @@
-const randomNumber = (startReport, endReport) => Math.round(startReport + Math.random() * (endReport - 1));
+const getRandomPositiveInteger = (min, max) => {
+  if (min < max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+};
+const getRandomArrayElement = (elements) => elements[getRandomPositiveInteger(0, elements.length - 1)];
 
-const getMaxLengthStr = (text, maxLength) => text.length <= maxLength;
-
-export {randomNumber, getMaxLengthStr};
+export { getRandomPositiveInteger, getRandomArrayElement };

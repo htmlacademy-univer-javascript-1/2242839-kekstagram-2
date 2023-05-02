@@ -1,3 +1,7 @@
-import {drawUsers} from "./drawUser.js";
+import { uploadPhoto } from './user-form.js';
+import { getData } from './api.js';
+import { showAlert } from './utils.js';
+import { initFilters } from './filter.js';
 
-drawUsers();
+getData(initFilters, showAlert);
+uploadPhoto();
